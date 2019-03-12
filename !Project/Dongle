@@ -1,0 +1,14 @@
+<NotepadPlus>
+    <Project name="Dongle">
+        <Folder name="App">
+            <File name="App\caterina\Caterina.h" />
+            <File name="App\caterina\Caterina.c" />
+            <File name="App\caterina\Makefile" />
+        </Folder>
+        <Folder name="BootLoader">
+            <File name="bootloader\bootloader\BootLoader.h" />
+            <File name="bootloader\bootloader\BootLoader.c" />
+            <File name="bootloader\bootloader\Makefile_BootLoader" />
+        </Folder>
+    </Project>
+</NotepadPlus>

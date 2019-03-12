@@ -1,0 +1,37 @@
+var a00026 =
+[
+    [ "_DISKIO", "a00026.html#adaaf74fb14f944682c41a495b64ede08", null ],
+    [ "_READONLY", "a00026.html#ad5bbf13eac760f360fa1489b66adbf84", null ],
+    [ "_USE_IOCTL", "a00026.html#afe6d1224687dede333375a2475c78ff6", null ],
+    [ "ATA_GET_MODEL", "a00026.html#a31f556ab98ab80c39058b38d9283865d", null ],
+    [ "ATA_GET_REV", "a00026.html#a23f5fff3341e98825ea1f7367fd09f1a", null ],
+    [ "ATA_GET_SN", "a00026.html#a469c4f989757ee1ee404134fea3c74ba", null ],
+    [ "CTRL_EJECT", "a00026.html#a5e40e16d2d7ce196858950f070b9ec03", null ],
+    [ "CTRL_LOCK", "a00026.html#af40e5cf3000553a978ff6e30dae70858", null ],
+    [ "CTRL_POWER", "a00026.html#a345531a07462afbd999f414708e3b65b", null ],
+    [ "CTRL_SYNC", "a00026.html#a1b3c492f9aec325f0655941b75256f3c", null ],
+    [ "GET_BLOCK_SIZE", "a00026.html#aec3bb4dfe075d0ba2f3b07b300a95500", null ],
+    [ "GET_SECTOR_COUNT", "a00026.html#a570216006f6a8fc4e1698b1bbb2d1dde", null ],
+    [ "GET_SECTOR_SIZE", "a00026.html#ac73b5cf2135cbd459d109b96c9aa346a", null ],
+    [ "MMC_GET_CID", "a00026.html#a17ad303dd18b19a4c90ab30a8a1c14c4", null ],
+    [ "MMC_GET_CSD", "a00026.html#ae3b858b81287929f7c7bea3b7aec3087", null ],
+    [ "MMC_GET_OCR", "a00026.html#aff118ba6bd7a9fe7699cee049cff5d6c", null ],
+    [ "MMC_GET_SDSTAT", "a00026.html#a5cc43c8449b872e16ea5ab42592f793e", null ],
+    [ "MMC_GET_TYPE", "a00026.html#aba3a81a9a47c7d1bf3ac7749bc72dcfd", null ],
+    [ "STA_NODISK", "a00026.html#aec625080763d6cf487e550a6c9a2dd19", null ],
+    [ "STA_NOINIT", "a00026.html#abd6503c70d862b979a3f7080a59e9acd", null ],
+    [ "STA_PROTECT", "a00026.html#a9ec6dc5f6620a33fabe388d3a111ca8c", null ],
+    [ "DSTATUS", "a00026.html#adba6790898ce4029c20a34b898ce73c1", null ],
+    [ "DRESULT", "a00026.html#aacdfef1dad6565f65c26d12fe0ea4b2b", [
+      [ "RES_OK", "a00026.html#aacdfef1dad6565f65c26d12fe0ea4b2ba2ea4b6ef3fffc17dd1d38ab5c2837737", null ],
+      [ "RES_ERROR", "a00026.html#aacdfef1dad6565f65c26d12fe0ea4b2ba78011f5557679ec178fb40bd21e89840", null ],
+      [ "RES_WRPRT", "a00026.html#aacdfef1dad6565f65c26d12fe0ea4b2ba442a6d4393dc404827067bc4e981b322", null ],
+      [ "RES_NOTRDY", "a00026.html#aacdfef1dad6565f65c26d12fe0ea4b2baad64c27c69eb1ff39ae67c5f77bb2b1d", null ],
+      [ "RES_PARERR", "a00026.html#aacdfef1dad6565f65c26d12fe0ea4b2baf4dcc07fd46310b5495fa8025c89a9f3", null ]
+    ] ],
+    [ "disk_initialize", "a00026.html#a2d5ebc53960f1cd48fc6b419d1256df3", null ],
+    [ "disk_ioctl", "a00026.html#af4f8c59be828b9f2e83612bca85ca69f", null ],
+    [ "disk_read", "a00026.html#a75298f57b6d13bd7148bc5dfa0e50472", null ],
+    [ "disk_status", "a00026.html#a80b48e03f0a66ea3cd0465654e44ec55", null ],
+    [ "disk_write", "a00026.html#a44e59653a39c1368ee0a8bfa4de78190", null ]
+];

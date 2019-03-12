@@ -1,0 +1,12 @@
+var a00020 =
+[
+    [ "Config", "a00020.html#a19776357dd07e9e13999216afe193191", null ],
+    [ "HID1_KeyboardHID", "a00020.html#a482fec1036d30e190d1754e55157e8d5", null ],
+    [ "HID1_KeyboardInterface", "a00020.html#ae3c91d8279848cf0bfff1c989b825ec9", null ],
+    [ "HID1_ReportINEndpoint", "a00020.html#a4a49187cd3adec42db17d161e774d455", null ],
+    [ "HID1_ReportOUTEndpoint", "a00020.html#a7f8119876325159b1dd12d64f1a56623", null ],
+    [ "HID2_MouseHID", "a00020.html#aab87fb7821286d226b5f49dbeb24da2b", null ],
+    [ "HID2_MouseInterface", "a00020.html#a7723b8149c3e337ea4ba3ba88999a7c7", null ],
+    [ "HID2_ReportINEndpoint", "a00020.html#ab8f47180d9cc7a247aa04372e12f0441", null ],
+    [ "HID2_ReportOUTEndpoint", "a00020.html#a68f99ba2427540ca9eab811f2e0f3e2a", null ]
+];
