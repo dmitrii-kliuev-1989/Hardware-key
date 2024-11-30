@@ -1,6 +1,6 @@
-// 	В загрузчике оставить только следующие функциии
-//	1) форматирования по считанному биту из EEPROM 
-//	2) Считывание причины форматирования из EEPROM
+// 	Р’ Р·Р°РіСЂСѓР·С‡РёРєРµ РѕСЃС‚Р°РІРёС‚СЊ С‚РѕР»СЊРєРѕ СЃР»РµРґСѓСЋС‰РёРµ С„СѓРЅРєС†РёРёРё
+//	1) С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РїРѕ СЃС‡РёС‚Р°РЅРЅРѕРјСѓ Р±РёС‚Сѓ РёР· EEPROM 
+//	2) РЎС‡РёС‚С‹РІР°РЅРёРµ РїСЂРёС‡РёРЅС‹ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РёР· EEPROM
 
 #define  INCLUDE_FROM_CATERINA_C
 #include "BootLoader.h"
@@ -11,17 +11,17 @@ static CDC_LineEncoding_t LineEncoding = { .BaudRateBPS = 0,
                                            .DataBits    = 8                            };
 									
 
-static uint16_t unixTimeStampEEPROMaddr = 10;	// адрес времени синхронизации
-static uint16_t serialNumEEPROMaddr = 15; 		// адрес серийного номера в EEPROM
-static uint16_t formattingMarkEEPROMaddr = 30;	// адрес метки форматирования
+static uint16_t unixTimeStampEEPROMaddr = 10;	// Р°РґСЂРµСЃ РІСЂРµРјРµРЅРё СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёРё
+static uint16_t serialNumEEPROMaddr = 15; 	// Р°РґСЂРµСЃ СЃРµСЂРёР№РЅРѕРіРѕ РЅРѕРјРµСЂР° РІ EEPROM
+static uint16_t formattingMarkEEPROMaddr = 30;	// Р°РґСЂРµСЃ РјРµС‚РєРё С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ
 
-uint8_t sizeSerNum = 10;	// размер серийного номера
+uint8_t sizeSerNum = 10;	// СЂР°Р·РјРµСЂ СЃРµСЂРёР№РЅРѕРіРѕ РЅРѕРјРµСЂР°
 
 ///////////////////////////////////////////////////////////////
-// Адреса причин перезагрузки в EEPROM
-static uint16_t EXTRF_EEPROMaddr = 170;		// аппаратный ресет
+// РђРґСЂРµСЃР° РїСЂРёС‡РёРЅ РїРµСЂРµР·Р°РіСЂСѓР·РєРё РІ EEPROM
+static uint16_t EXTRF_EEPROMaddr = 170;		// Р°РїРїР°СЂР°С‚РЅС‹Р№ СЂРµСЃРµС‚
 
-static bool ApplicationIsExists = false;	// Наличие приложения по адресу 0x0000
+static bool ApplicationIsExists = false;	// РќР°Р»РёС‡РёРµ РїСЂРёР»РѕР¶РµРЅРёСЏ РїРѕ Р°РґСЂРµСЃСѓ 0x0000
 
 int main(void)
 {	
@@ -32,7 +32,7 @@ int main(void)
 	while (true)
 	{
 		uint8_t formatting_mark = eeprom_read_byte ((uint8_t *)formattingMarkEEPROMaddr);
-		if (formatting_mark != 0xFF) // если флаг форматирования установлен
+		if (formatting_mark != 0xFF) // РµСЃР»Рё С„Р»Р°Рі С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ СѓСЃС‚Р°РЅРѕРІР»РµРЅ
 		{
 			blink();
 			FormatAndCheck_Flash();
@@ -40,7 +40,7 @@ int main(void)
 			blink();
 		}
 		
-		if (ApplicationIsExists) ApplicationStart(); 		// Перейти в приложение если оно есть
+		if (ApplicationIsExists) ApplicationStart(); 		// РџРµСЂРµР№С‚Рё РІ РїСЂРёР»РѕР¶РµРЅРёРµ РµСЃР»Рё РѕРЅРѕ РµСЃС‚СЊ
 		
 		USB_USBTask();
 		CDC_Task();
@@ -49,10 +49,10 @@ int main(void)
 
 void initialization_func()
 {
-	wdt_disable();						// отключить сторожевой таймер
-	clock_prescale_set(clock_div_1);	// Отключить деление тактовой частоты
+	wdt_disable();				// РѕС‚РєР»СЋС‡РёС‚СЊ СЃС‚РѕСЂРѕР¶РµРІРѕР№ С‚Р°Р№РјРµСЂ
+	clock_prescale_set(clock_div_1);	// РћС‚РєР»СЋС‡РёС‚СЊ РґРµР»РµРЅРёРµ С‚Р°РєС‚РѕРІРѕР№ С‡Р°СЃС‚РѕС‚С‹
 	
-	// Перенос таблицы векторов прерываний в секцию загрузчика
+	// РџРµСЂРµРЅРѕСЃ С‚Р°Р±Р»РёС†С‹ РІРµРєС‚РѕСЂРѕРІ РїСЂРµСЂС‹РІР°РЅРёР№ РІ СЃРµРєС†РёСЋ Р·Р°РіСЂСѓР·С‡РёРєР°
 	MCUCR = (1 << IVCE);
 	MCUCR = (1 << IVSEL);
 	
@@ -164,7 +164,7 @@ void split_int(uint32_t num, char * c, uint8_t * size)
 	uint32_t n = num;
 	uint32_t numQty = 0;
 	
-	// посчитать кол-во цифр в числе
+	// РїРѕСЃС‡РёС‚Р°С‚СЊ РєРѕР»-РІРѕ С†РёС„СЂ РІ С‡РёСЃР»Рµ
 	while (n != 0) { n /= 10; numQty++; }
 
 	*size = numQty;
@@ -176,7 +176,7 @@ void split_int(uint32_t num, char * c, uint8_t * size)
 	}
 
 	char t;
-	//инвертируем массив символов
+	// РёРЅРІРµСЂС‚РёСЂСѓРµРј РјР°СЃСЃРёРІ СЃРёРјРІРѕР»РѕРІ
 	for (uint8_t i = 0; i < numQty / 2; i++)
 	{
 		t = c[i];
@@ -187,18 +187,18 @@ void split_int(uint32_t num, char * c, uint8_t * size)
 
 void save_mcusr_inf()
 {	
-	if ( MCUSR & ( 1 << EXTRF ))	//внешний сброс
+	if ( MCUSR & ( 1 << EXTRF ))		//РІРЅРµС€РЅРёР№ СЃР±СЂРѕСЃ
 	{
-		MCUSR &=  ~( 1 << EXTRF );	// сбросить флаг
+		MCUSR &=  ~( 1 << EXTRF );	// СЃР±СЂРѕСЃРёС‚СЊ С„Р»Р°Рі
 		eeprom_write_byte_safe((uint8_t*)EXTRF_EEPROMaddr, 1);
 	}
 	else
 		eeprom_write_byte_safe((uint8_t*)EXTRF_EEPROMaddr, 0);
 	
-	MCUSR = 0;							// очистить все флаги сброса
+	MCUSR = 0;				// РѕС‡РёСЃС‚РёС‚СЊ РІСЃРµ С„Р»Р°РіРё СЃР±СЂРѕСЃР°
 }
 
-// Проверить, есть ли флаг форматирования и если есть, то форматировать.
+// РџСЂРѕРІРµСЂРёС‚СЊ, РµСЃС‚СЊ Р»Рё С„Р»Р°Рі С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ Рё РµСЃР»Рё РµСЃС‚СЊ, С‚Рѕ С„РѕСЂРјР°С‚РёСЂРѕРІР°С‚СЊ.
 bool FormatAndCheck_Flash()
 {	
 	bool chk = CheckFormat_Flash();
@@ -423,15 +423,15 @@ void ApplicationStart(void)
 {
 	cli();
 
-	//Сброс TIMER1 и счетчика перед запуском скетча
+	//РЎР±СЂРѕСЃ TIMER1 Рё СЃС‡РµС‚С‡РёРєР° РїРµСЂРµРґ Р·Р°РїСѓСЃРєРѕРј СЃРєРµС‚С‡Р°
 	TIMSK1 = 0;
 	TCCR1B = 0;
 	
-	// Перенос таблицы векторов прерываний в раздел приложения
+	// РџРµСЂРµРЅРѕСЃ С‚Р°Р±Р»РёС†С‹ РІРµРєС‚РѕСЂРѕРІ РїСЂРµСЂС‹РІР°РЅРёР№ РІ СЂР°Р·РґРµР» РїСЂРёР»РѕР¶РµРЅРёСЏ
 	MCUCR = (1 << IVCE);
 	MCUCR = 0;
 
-	//перейти к началу пространства приложений
+	//РїРµСЂРµР№С‚Рё Рє РЅР°С‡Р°Р»Сѓ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІР° РїСЂРёР»РѕР¶РµРЅРёР№
 	__asm__ volatile("jmp 0x0000");
 }
 
