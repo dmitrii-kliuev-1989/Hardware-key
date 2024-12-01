@@ -1,5 +1,8 @@
 # Hardware-key
-Hardware key based on Atmega32u4 microcontroller for software protection. The goal of the project: to protect critical software data and user licensing.
+Аппаратный ключ на базе микроконтроллера Atmega32u4 для защиты ПО.
+Цель проекта: защитить критически важные данные. Лицензирование пользователей
+
+[Пояснительная записка](!Documentation/PDF/Explanatory_note-K06-12B-BKP-Kliuev.pdf)
 
 Самое интересное тут  
 Загрузчик  
